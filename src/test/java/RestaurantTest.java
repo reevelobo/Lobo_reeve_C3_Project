@@ -9,10 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RestaurantTest {
     Restaurant restaurant;
-    //REFACTOR ALL THE REPEATED LINES OF CODE
 
-    //>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    //-------FOR THE 2 TESTS BELOW, YOU MAY USE THE CONCEPT OF MOCKING, IF YOU RUN INTO ANY TROUBLE
     @Test
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time(){
         LocalTime openingTime = LocalTime.parse("1:00:00");
@@ -30,10 +27,6 @@ class RestaurantTest {
         assert(restaurant.isRestaurantOpen());
     }
 
-    //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
-    //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
     public void adding_item_to_menu_should_increase_menu_size_by_1(){
         LocalTime openingTime = LocalTime.parse("10:30:00");
@@ -69,9 +62,7 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
-    //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    //<<<<<<<<<<<<<<<<<<<<PART 3: Feature TDD>>>>>>>>>>>>>>>>>>>>>>>>>>
     @Test
     public void calculating_total_price_of_menu_items_false(){
         LocalTime openingTime = LocalTime.parse("10:30:00");
