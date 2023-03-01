@@ -63,18 +63,7 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
 
-    @Test
-    public void calculating_total_price_of_menu_items_false(){
-        LocalTime openingTime = LocalTime.parse("10:30:00");
-        LocalTime closingTime = LocalTime.parse("22:00:00");
-        restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
-        restaurant.addToMenu("Sweet corn soup",119);
-        restaurant.addToMenu("Vegetable lasagne", 269);
-        List<String> items = new ArrayList<>();
-        items.add("Sweet corn soup");
-        items.add("Vegetable lasagne");
-        assertNotEquals(388,restaurant.getTotalPrice(items));
-    }
+
 
     @Test
     public void calculating_total_price_of_menu_items_true(){
@@ -87,6 +76,19 @@ class RestaurantTest {
         items.add("Sweet corn soup");
         items.add("Vegetable lasagne");
         assertEquals(388,restaurant.getTotalPrice(items));
+    }
+
+    @Test
+    public void calculating_total_price_of_menu_items_false(){
+        LocalTime openingTime = LocalTime.parse("10:30:00");
+        LocalTime closingTime = LocalTime.parse("22:00:00");
+        restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        List<String> items = new ArrayList<>();
+        items.add("Sweet corn soup");
+        items.add("Vegetable lasagne");
+        assertNotEquals(388,restaurant.getTotalPrice(items));
     }
 
 }
